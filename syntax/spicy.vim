@@ -28,7 +28,7 @@ syntax match spicyRegexp ~/.*/~
 
 syntax keyword spicyOperator in + - * / += -= *= /= ++ -- . .? ?.
 syntax match spicyComment /#.*$/
-syntax keyword spicyRepeat for while
+syntax keyword spicyRepeat for while in
 
 highlight default link spicyString String
 highlight default link spicyNumber Number
