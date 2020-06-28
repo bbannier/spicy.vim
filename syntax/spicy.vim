@@ -26,7 +26,7 @@ syntax keyword spicyType addr bitfield bool bytes iterator interval enum port in
 
 syntax match spicyRegexp ~/.*/~
 
-syntax keyword spicyOperator in + - * / += -= *= /= ++ --
+syntax keyword spicyOperator in + - * / += -= *= /= ++ -- . .? ?.
 syntax match spicyComment /#.*$/
 syntax keyword spicyRepeat for while
 
