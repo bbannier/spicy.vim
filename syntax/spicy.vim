@@ -20,6 +20,7 @@ syntax keyword spicyStructure type
 
 syntax match spicyFunction /\(\)\i\+(/he=e-1
 syntax match spicyIdentifier /\i\+/
+syntax match spicyAttribute /&\(\w\|\d\|-\)\+/
 syntax match spicyNumber "\d"
 
 syntax keyword spicyType addr bitfield bool bytes iterator interval interval_ns enum port int8 int16 int32 int64 uint8 uint16 uint32 uint64 real regexp sink stream view string tuple unit vector void optional
@@ -42,6 +43,7 @@ highlight default link spicyException Exception
 highlight default link spicyKeyword Keyword
 highlight default link spicyImport Include
 highlight default link spicyLabel Label
+highlight default link spicyAttribute Special
 highlight default link spicyStructure Structure
 highlight default link spicyFunction Function
 highlight default link spicyIdentifier Identifier
