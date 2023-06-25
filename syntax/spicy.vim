@@ -14,7 +14,7 @@ syntax keyword spicyStatement print assert cast result error
 syntax keyword spicyConditional if else switch while
 syntax keyword spicyCase case default
 syntax keyword spicyException try catch throw
-syntax match spicyLabel /%\S\+/
+syntax match spicyLabel /%[^=]\+/
 
 syntax keyword spicyStructure type
 
