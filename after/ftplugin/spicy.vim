@@ -1,7 +1,7 @@
 " Author: Benjamin Bannier <bbannier@gmail.com>
 " Description: Support for checking Spicy files with spicyc via https://github.com/w0rp/ale
 
-if !exists(":ALELint")
+if !exists(':ALELint')
     finish
 endif
 
