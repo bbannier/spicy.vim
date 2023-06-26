@@ -8,7 +8,7 @@ let b:current_syntax = 'spicy'
 syntax region spicyString start=/"/ end =/"/ skip=+\\"+
 syntax keyword spicyBoolean True False
 
-syntax keyword spicyKeyword public self module function global local return on break stop throw const
+syntax keyword spicyKeyword public self module function global local return on break stop throw const skip
 syntax keyword spicyImport import from
 syntax keyword spicyStatement print assert cast result error
 syntax keyword spicyConditional if else switch while
