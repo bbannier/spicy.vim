@@ -9,6 +9,7 @@ syntax region spicyString start=/"/ end =/"/ skip=+\\"+
 syntax keyword spicyBoolean True False
 
 syntax keyword spicyKeyword public self module function global local return on break stop throw const skip
+syntax match spicyDollarDollar /\$\$/
 syntax keyword spicyImport import from
 syntax keyword spicyStatement print assert cast result error
 syntax keyword spicyConditional if else switch while
@@ -41,6 +42,7 @@ highlight default link spicyConditional Conditional
 highlight default link spicyCase Label
 highlight default link spicyException Exception
 highlight default link spicyKeyword Keyword
+highlight default link spicyDollarDollar Keyword
 highlight default link spicyImport Include
 highlight default link spicyLabel Label
 highlight default link spicyAttribute Special
