@@ -7,6 +7,9 @@ if exists('b:current_syntax')
 	finish
 endif
 
+" For highlighting payloads to `@TEST-EXEC*`.
+syntax include @spicySh syntax/sh.vim
+
 let b:current_syntax = 'spicy'
 
 syntax region spicyString start=/"/ end =/"/ skip=+\\"+
@@ -35,13 +38,14 @@ syntax match spicyRegexp ~/.*/~
 syntax keyword spicyOperator in + - * / += -= *= /= ++ -- . .? ?.
 syntax keyword spicyRepeat for while in
 
-syntax match spicyBTest /\v\@TEST(-\w+)+:?.*/
-syntax match spicyBTestExec /\(@TEST-EXEC\(-FAIL\)\?:\s*\)\@<=.*/ containedin=spicyBTest
-syntax match spicyComment /#.*$/ contains=spicyBTest
+syntax match spicyBTest /\v\@TEST(-\w+)+:?.*/ containedin=spicyComment " This group only resets syntax.
+syntax region spicyBTestExec start=/@TEST-EXEC.\{-}\s/ end=/$/ containedin=spicyBTest contains=@spicySh
+syntax match spicyBTestOther /@TEST\(.*-EXEC\)\@!.\{-}\s/ containedin=spicyBTest
+syntax match spicyBTestKeyword /@TEST-.\{-}\s/ containedin=spicyBTestExec containedin=spicyBTestOther
+syntax match spicyComment /#.*$/
 
-highlight default link spicyBTest SpecialComment
-" TODO(bbannier): forward to shell highlighter
-highlight default link spicyBTestExec Macro
+highlight default link spicyBTestKeyword SpecialComment
+highlight default link spicyBTestOther SpecialComment
 
 highlight default link spicyString String
 highlight default link spicyNumber Number
