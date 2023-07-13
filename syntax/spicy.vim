@@ -33,8 +33,15 @@ syntax keyword spicyType addr bitfield bool bytes iterator interval interval_ns 
 syntax match spicyRegexp ~/.*/~
 
 syntax keyword spicyOperator in + - * / += -= *= /= ++ -- . .? ?.
-syntax match spicyComment /#.*$/
 syntax keyword spicyRepeat for while in
+
+syntax match spicyBTest /\v\@TEST(-\w+)+:?.*/
+syntax match spicyBTestExec /\(@TEST-EXEC\(-FAIL\)\?:\s*\)\@<=.*/ containedin=spicyBTest
+syntax match spicyComment /#.*$/ contains=spicyBTest
+
+highlight default link spicyBTest SpecialComment
+" TODO(bbannier): forward to shell highlighter
+highlight default link spicyBTestExec Macro
 
 highlight default link spicyString String
 highlight default link spicyNumber Number
