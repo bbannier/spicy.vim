@@ -3,6 +3,10 @@
 " Maintainer:	Benjamin Bannier <bbannier@gmail.com>
 " License:      VIM LICENSE
 
+if exists('b:current_syntax')
+	finish
+endif
+
 let b:current_syntax = 'spicy'
 
 syntax region spicyString start=/"/ end =/"/ skip=+\\"+
