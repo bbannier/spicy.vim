@@ -21,14 +21,14 @@ syntax keyword spicyCase case default
 syntax keyword spicyException try catch throw
 syntax match spicyLabel /%[^= "]\+/
 
-syntax keyword spicyStructure type
+syntax keyword spicyStructure type struct enum unit
 
 syntax match spicyFunction /\(\)\i\+(/he=e-1
 syntax match spicyIdentifier /\i\+/
 syntax match spicyAttribute /&\(\w\|\d\|-\)\+/
 syntax match spicyNumber "\d"
 
-syntax keyword spicyType addr bitfield bool bytes iterator interval interval_ns enum port int8 int16 int32 int64 uint8 uint16 uint32 uint64 real regexp sink stream view string tuple unit vector void optional
+syntax keyword spicyType addr bitfield bool bytes iterator interval interval_ns port int8 int16 int32 int64 uint8 uint16 uint32 uint64 real regexp sink stream view string tuple vector void optional
 
 syntax match spicyRegexp ~/.*/~
 
