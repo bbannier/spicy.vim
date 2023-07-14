@@ -38,9 +38,9 @@ syntax match spicyRegexp ~/.*/~
 syntax keyword spicyOperator in + - * / += -= *= /= ++ -- . .? ?.
 syntax keyword spicyRepeat for while in
 
-syntax match spicyBTest /\v\@TEST(-\w+)+:?.*/ containedin=spicyComment " This group only resets syntax.
-syntax region spicyBTestExec start=/@TEST-EXEC.\{-}\s/ end=/$/ containedin=spicyBTest contains=@spicySh
-syntax match spicyBTestOther /@TEST\(.*-EXEC\)\@!.\{-}\s/ containedin=spicyBTest
+syntax match spicyBTest /\v\@TEST(-\w+)+:?.*/ containedin=spicyComment containedin=ALL " This group only resets syntax.
+syntax region spicyBTestExec start=/@TEST-\(EXEC\|REQUIRES\).\{-}\s/ end=/$/ containedin=spicyBTest contains=@spicySh
+syntax match spicyBTestOther /@TEST\(.*-\(EXEC\|REQUIRES\)\)\@!.\{-}\s/ containedin=spicyBTest
 syntax match spicyBTestKeyword /@TEST-.\{-}\s/ containedin=spicyBTestExec containedin=spicyBTestOther
 syntax match spicyComment /#.*$/
 
