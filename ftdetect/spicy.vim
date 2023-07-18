@@ -1,4 +1,4 @@
-augroup spicy_vim
-autocmd spicy_vim BufRead,BufNewFile *.spicy
-\    set filetype=spicy
-\        commentstring=#%s
+if has('autocmd')
+  augroup spicy
+  autocmd spicy BufNewFile,BufRead *.spicy setfiletype spicy
+endif
