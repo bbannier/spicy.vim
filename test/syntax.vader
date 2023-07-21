@@ -1,0 +1,19 @@
+Given spicy (@TEST-EXEC):
+  # @TEST-EXEC: foo
+Execute:
+  AssertEqual SyntaxAt(1, 1), "spicyComment"
+  AssertEqual SyntaxAt(1, 3), "spicyBTestKeyword"
+  AssertEqual SyntaxAt(1, 15), "spicyBTestExec"
+
+Given spicy (@TEST-START-FILE):
+  # @TEST-START-FILE foo.spicy
+Execute:
+  AssertEqual SyntaxAt(1, 1), "spicyComment"
+  AssertEqual SyntaxAt(1, 3), "spicyBTestOther"
+  AssertEqual SyntaxAt(1, 25), "spicyBTest"
+
+Given spicy (@TEST-END-FILE):
+  # @TEST-END-FILE
+Execute:
+  AssertEqual SyntaxAt(1, 1), "spicyComment"
+  AssertEqual SyntaxAt(1, 3), "spicyBTestKeyword"
