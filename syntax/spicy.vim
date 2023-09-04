@@ -43,7 +43,7 @@ syntax region spicyBTestExec start=/@TEST-\(EXEC\|REQUIRES\).\{-}\s/ end=/$/ con
 syntax match spicyBTestOther /@TEST\(.*-\(EXEC\|REQUIRES\)\)\@!.\{-}\s/ containedin=spicyBTest
 syntax match spicyBTestKeyword /@TEST-.\{-}\s/ containedin=spicyBTestExec containedin=spicyBTestOther
 " Extra case for keywords which do not take args or no shell commands.
-syntax match spicyBTestKeyword /@TEST-\(DOC\|END-FILE\|GROUP\|IGNORE\|START-FILE\)/ containedin=spicyBTest
+syntax match spicyBTestKeyword /@TEST-\(DOC\|END-FILE\|GROUP\|IGNORE\|KNOWN-FAILURE\|MEASURE-TIME\|PORT\|START-FILE\|START-NEXT\)/ containedin=spicyBTest
 syntax match spicyComment /#.*$/
 
 highlight default link spicyBTestKeyword SpecialComment
