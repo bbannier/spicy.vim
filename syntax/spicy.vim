@@ -42,7 +42,8 @@ syntax match spicyBTest /\v\@TEST(-\w+)+:?.*/ containedin=spicyComment contained
 syntax region spicyBTestExec start=/@TEST-\(EXEC\|REQUIRES\).\{-}\s/ end=/$/ containedin=spicyBTest contains=@spicySh
 syntax match spicyBTestOther /@TEST\(.*-\(EXEC\|REQUIRES\)\)\@!.\{-}\s/ containedin=spicyBTest
 syntax match spicyBTestKeyword /@TEST-.\{-}\s/ containedin=spicyBTestExec containedin=spicyBTestOther
-syntax match spicyBTestKeyword /@TEST-END-FILE/ containedin=spicyBTest " Extra case for keywords which do not take args.
+" Extra case for keywords which do not take args or no shell commands.
+syntax match spicyBTestKeyword /@TEST-\(DOC\|END-FILE\|GROUP\|IGNORE\|START-FILE\)/ containedin=spicyBTest
 syntax match spicyComment /#.*$/
 
 highlight default link spicyBTestKeyword SpecialComment

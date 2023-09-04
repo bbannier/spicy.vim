@@ -9,11 +9,36 @@ Given spicy (@TEST-START-FILE):
   # @TEST-START-FILE foo.spicy
 Execute:
   AssertEqual SyntaxAt(1, 1), "spicyComment"
-  AssertEqual SyntaxAt(1, 3), "spicyBTestOther"
+  AssertEqual SyntaxAt(1, 3), "spicyBTestKeyword"
   AssertEqual SyntaxAt(1, 25), "spicyBTest"
+
+Given spicy (@TEST-REQUIRES):
+  # @TEST-REQUIRES: false
+Execute:
+  AssertEqual SyntaxAt(1, 1), "spicyComment"
+  AssertEqual SyntaxAt(1, 3), "spicyBTestKeyword"
+  AssertEqual SyntaxAt(1, 21), "shStatement"
 
 Given spicy (@TEST-END-FILE):
   # @TEST-END-FILE
+Execute:
+  AssertEqual SyntaxAt(1, 1), "spicyComment"
+  AssertEqual SyntaxAt(1, 3), "spicyBTestKeyword"
+
+Given spicy (@TEST-IGNORE):
+  # @TEST-IGNORE
+Execute:
+  AssertEqual SyntaxAt(1, 1), "spicyComment"
+  AssertEqual SyntaxAt(1, 3), "spicyBTestKeyword"
+
+Given spicy (@TEST-DOC):
+  # @TEST-DOC: foo
+Execute:
+  AssertEqual SyntaxAt(1, 1), "spicyComment"
+  AssertEqual SyntaxAt(1, 3), "spicyBTestKeyword"
+
+Given spicy (@TEST-GROUP):
+  # @TEST-GROUP: foo
 Execute:
   AssertEqual SyntaxAt(1, 1), "spicyComment"
   AssertEqual SyntaxAt(1, 3), "spicyBTestKeyword"
