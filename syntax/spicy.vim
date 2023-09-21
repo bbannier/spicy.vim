@@ -15,6 +15,8 @@ let b:current_syntax = 'spicy'
 syntax region spicyString start=/"/ end =/"/ skip=+\\"+
 syntax keyword spicyBoolean True False
 
+syntax match spicyPreproc /@\w\+/
+
 syntax keyword spicyKeyword public self module function global local return on break stop throw const skip
 syntax match spicyDollarDollar /\$\$/
 syntax keyword spicyImport import from
@@ -70,3 +72,4 @@ highlight default link spicyStatement Function
 highlight default link spicyComment Comment
 highlight default link spicyOperator Operator
 highlight default link spicyRepeat Repeat
+highlight default link spicyPreproc PreProc
