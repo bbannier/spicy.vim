@@ -82,3 +82,19 @@ Execute:
   AssertEqual SyntaxAt(1, 1), "spicyPreproc"
   AssertEqual SyntaxAt(1, 7), "spicyBoolean"
   AssertEqual SyntaxAt(2, 1), "spicyPreproc"
+
+Given spicy (escaped string):
+  "\\X\\" 1;
+Execute:
+  AssertEqual SyntaxAt(1, 1), "spicyString"
+  AssertEqual SyntaxAt(1, 7), "spicyString"
+  AssertEqual SyntaxAt(1, 8), ""
+  AssertEqual SyntaxAt(1, 9), "spicyNumber"
+
+Given spicy (escaped quote):
+  "\\X\"" 1;
+Execute:
+  AssertEqual SyntaxAt(1, 1), "spicyString"
+  AssertEqual SyntaxAt(1, 7), "spicyString"
+  AssertEqual SyntaxAt(1, 8), ""
+  AssertEqual SyntaxAt(1, 9), "spicyNumber"
