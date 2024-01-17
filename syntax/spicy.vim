@@ -26,7 +26,7 @@ syntax keyword spicyStatement print assert cast result error
 syntax keyword spicyConditional if else switch while
 syntax keyword spicyCase case default
 syntax keyword spicyException try catch throw
-syntax match spicyLabel /%[^= "]\+/
+syntax match spicyProperty /%[^= ;"]\+/
 
 syntax keyword spicyStructure type struct enum unit
 
@@ -66,7 +66,7 @@ highlight default link spicyException Exception
 highlight default link spicyKeyword Keyword
 highlight default link spicyDollarDollar Keyword
 highlight default link spicyImport Include
-highlight default link spicyLabel Label
+highlight default link spicyProperty Label
 highlight default link spicyAttribute Special
 highlight default link spicyStructure Structure
 highlight default link spicyFunction Function
