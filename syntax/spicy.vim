@@ -40,6 +40,7 @@ syntax keyword spicyType addr bitfield bool bytes iterator interval interval_ns 
 syntax match spicyRegexp ~/.*/~
 
 syntax keyword spicyOperator + - * / += -= *= /= ++ -- . .? ?.
+syn match spicyOperator display "&&\|&\|||\||"
 
 syntax keyword spicyRepeat for while in
 
