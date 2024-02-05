@@ -19,7 +19,7 @@ syntax keyword spicyBoolean True False
 
 syntax match spicyPreproc /@\w\+/
 
-syntax keyword spicyKeyword public self module function global local return on break stop throw const skip
+syntax keyword spicyKeyword public self module function global local return on break stop throw const skip in inout
 syntax match spicyDollarDollar /\$\$/
 syntax keyword spicyImport import from
 syntax keyword spicyStatement print assert cast result error
@@ -39,7 +39,8 @@ syntax keyword spicyType addr bitfield bool bytes iterator interval interval_ns 
 
 syntax match spicyRegexp ~/.*/~
 
-syntax keyword spicyOperator in + - * / += -= *= /= ++ -- . .? ?.
+syntax keyword spicyOperator + - * / += -= *= /= ++ -- . .? ?.
+
 syntax keyword spicyRepeat for while in
 
 syntax match spicyBTest /\v\@TEST(-\w+)+:?.*/ containedin=spicyComment containedin=ALL " This group only resets syntax.
