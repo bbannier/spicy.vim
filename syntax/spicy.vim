@@ -26,7 +26,7 @@ syntax keyword spicyStatement print assert cast result error
 syntax keyword spicyConditional if else switch while
 syntax keyword spicyCase case default
 syntax keyword spicyException try catch throw
-syntax match spicyProperty /%[^= ;"]\+/
+syntax match spicyProperty /%[^= ;"(]\+/
 
 syntax keyword spicyStructure type struct enum unit
 

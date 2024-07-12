@@ -98,3 +98,16 @@ Execute:
   AssertEqual SyntaxAt(1, 7), "spicyString"
   AssertEqual SyntaxAt(1, 8), ""
   AssertEqual SyntaxAt(1, 9), "spicyNumber"
+
+Given spicy (hook with args):
+  on %error(e: string) {}
+Execute:
+# on
+  AssertEqual SyntaxAt(1, 1), "spicyKeyword"
+# %error
+  AssertEqual SyntaxAt(1, 4), "spicyProperty"
+  AssertEqual SyntaxAt(1, 5), "spicyProperty"
+# e
+  AssertEqual SyntaxAt(1, 11), "spicyIdentifier"
+# string
+  AssertEqual SyntaxAt(1, 14), "spicyType"
