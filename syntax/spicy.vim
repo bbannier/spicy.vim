@@ -21,6 +21,7 @@ syntax match spicyPreproc /@\w\+/
 
 syntax keyword spicyKeyword public self module function global local return on break stop throw const skip in inout
 syntax match spicyDollarDollar /\$\$/
+syntax keyword spicyNull Null
 syntax keyword spicyImport import from
 syntax keyword spicyStatement print assert cast result error
 syntax keyword spicyConditional if else switch while
@@ -67,6 +68,7 @@ highlight default link spicyCase Label
 highlight default link spicyException Exception
 highlight default link spicyKeyword Keyword
 highlight default link spicyDollarDollar Keyword
+highlight default link spicyNull Keyword
 highlight default link spicyImport Include
 highlight default link spicyProperty Label
 highlight default link spicyAttribute Special
