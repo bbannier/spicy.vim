@@ -8,13 +8,13 @@ endif
 call ale#Set('spicy_spicyc_executable', 'spicyc')
 
 function! HandleErrors(buffer, lines) abort
-    " Handle '[error] {file}:{line}: {message}' format.
-    let l:pattern = '\[error\] \v.*:(\d+):(\d+):\s(.*)$'
+    " Handle '[error] {file}:{line}:{col}-{line}:{col}: {message}' format.
+    let l:pattern = '\[error\] \v.*:(\d+):(\d+)-(\d+):(\d+):\s(.*)$'
 
     return map(ale#util#GetMatches(a:lines, l:pattern), "{
     \   'lnum': str2nr(v:val[1]),
     \   'col': str2nr(v:val[2]),
-    \   'text': v:val[3],
+    \   'text': v:val[5],
     \}")
 endfunction
 
