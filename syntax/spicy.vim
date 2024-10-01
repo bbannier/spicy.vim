@@ -28,6 +28,7 @@ syntax keyword spicyConditional if else switch while
 syntax keyword spicyCase case default
 syntax keyword spicyException try catch throw
 syntax match spicyProperty /%[^= ;"(]\+/
+syntax match spicyCapture /\$[1-9][0-9]*/
 
 syntax keyword spicyStructure type struct enum unit
 
@@ -71,6 +72,7 @@ highlight default link spicyDollarDollar Keyword
 highlight default link spicyNull Keyword
 highlight default link spicyImport Include
 highlight default link spicyProperty Label
+highlight default link spicyCapture Label
 highlight default link spicyAttribute Special
 highlight default link spicyStructure Structure
 highlight default link spicyFunction Function

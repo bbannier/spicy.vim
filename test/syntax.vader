@@ -111,3 +111,24 @@ Execute:
   AssertEqual SyntaxAt(1, 11), "spicyIdentifier"
 # string
   AssertEqual SyntaxAt(1, 14), "spicyType"
+
+Given spicy (capture):
+  $1
+  $10
+  $99
+Execute:
+  AssertEqual SyntaxAt(1, 1), "spicyCapture"
+  AssertEqual SyntaxAt(1, 2), "spicyCapture"
+
+  AssertEqual SyntaxAt(2, 1), "spicyCapture"
+  AssertEqual SyntaxAt(2, 2), "spicyCapture"
+
+  AssertEqual SyntaxAt(3, 1), "spicyCapture"
+  AssertEqual SyntaxAt(3, 2), "spicyCapture"
+
+Given spicy (impossible capture):
+  $0
+Execute:
+  " Does not match.
+  AssertEqual SyntaxAt(1, 1), ""
+  AssertEqual SyntaxAt(1, 2), "spicyNumber"
