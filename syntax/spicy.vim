@@ -19,7 +19,7 @@ syntax keyword spicyBoolean True False
 
 syntax match spicyPreproc /@\w\+/
 
-syntax keyword spicyKeyword public self module function global local return on break stop throw const skip in inout
+syntax keyword spicyKeyword public self module function global local return on break continue stop throw const skip in inout
 syntax match spicyDollarDollar /\$\$/
 syntax keyword spicyNull Null
 syntax keyword spicyImport import from
