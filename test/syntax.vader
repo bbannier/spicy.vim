@@ -3,6 +3,27 @@
 " tests in the current buffer can be executed with `:Vader`. To execute all
 " tests run e.g., `:Vader test/*`.
 
+Given spicy (character):
+  'a';
+  '"';
+Execute:
+  AssertEqual SyntaxAt(1, 1), "spicyCharacter"
+
+  AssertEqual SyntaxAt(2, 1), "spicyCharacter"
+  AssertEqual SyntaxAt(2, 2), "spicyCharacter"
+  AssertEqual SyntaxAt(2, 3), "spicyCharacter"
+
+Given spicy (string):
+  "asd asd asd asd";
+  "'";
+Execute:
+  AssertEqual SyntaxAt(1, 1), "spicyString"
+  AssertEqual SyntaxAt(1, 5), "spicyString"
+
+  AssertEqual SyntaxAt(2, 1), "spicyString"
+  AssertEqual SyntaxAt(2, 2), "spicyString"
+  AssertEqual SyntaxAt(2, 3), "spicyString"
+
 Given spicy (@TEST-EXEC):
   # @TEST-EXEC: foo
 Execute:
