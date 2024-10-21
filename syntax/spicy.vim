@@ -13,6 +13,7 @@ syntax include @spicySh syntax/sh.vim
 let b:current_syntax = 'spicy'
 
 syntax region spicyString start=/"/ skip=/\\"/ end =/"/ contains=spicyEscapeChar
+syntax match spicyCharacter /'.'/
 syn match spicyEscapeChar /\\./ contained
 
 syntax keyword spicyBoolean True False
@@ -58,6 +59,7 @@ highlight default link spicyBTestKeyword SpecialComment
 highlight default link spicyBTestOther SpecialComment
 
 highlight default link spicyString String
+highlight default link spicyCharacter Character
 highlight default link spicyEscapeChar SpecialChar
 highlight default link spicyNumber Number
 highlight default link spicyType Type
