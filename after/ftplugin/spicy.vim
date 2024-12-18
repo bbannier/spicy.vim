@@ -26,3 +26,19 @@ call ale#linter#Define('spicy', {
 \   'callback': 'HandleErrors',
 \   'lint_file': 1,
 \})
+
+call ale#Set('spicy_format_executable', 'spicy-format')
+
+function! FormatSpicy(buffer) abort
+    return {
+    \   'command': ale#Var(a:buffer, 'spicy_format_executable')
+    \}
+endfunction
+
+call ale#fix#registry#Add('spicy-format',
+\    'FormatSpicy',
+\    ['spicy'],
+\    'A Spicy formatter written in Rust'
+\)
+
+let b:ale_fixers = ['spicy-format']
