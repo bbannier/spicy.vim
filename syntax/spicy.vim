@@ -35,6 +35,7 @@ syntax keyword spicyStructure type struct enum unit
 
 syntax match spicyFunction /\(\)\i\+(/he=e-1
 syntax match spicyIdentifier /\i\+/
+syntax match spicyStructInit /$[a-zA-Z_]\+\i*/
 syntax match spicyAttribute /&\(\w\|\d\|-\)\+/
 syntax match spicyNumber "\d"
 
@@ -79,6 +80,7 @@ highlight default link spicyAttribute Special
 highlight default link spicyStructure Structure
 highlight default link spicyFunction Function
 highlight default link spicyIdentifier Identifier
+highlight default link spicyStructInit Identifier
 highlight default link spicyStatement Function
 highlight default link spicyComment Comment
 highlight default link spicyOperator Operator

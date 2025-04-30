@@ -153,3 +153,12 @@ Execute:
   " Does not match.
   AssertEqual SyntaxAt(1, 1), ""
   AssertEqual SyntaxAt(1, 2), "spicyNumber"
+
+Given spicy (struct init):
+  local s: S = [$abc123 = 1];
+Execute:
+  AssertEqual SyntaxAt(1, 14), ""
+  AssertEqual SyntaxAt(1, 15), "spicyStructInit"
+  AssertEqual SyntaxAt(1, 16), "spicyStructInit"
+  AssertEqual SyntaxAt(1, 21), "spicyStructInit"
+  AssertEqual SyntaxAt(1, 22), ""
