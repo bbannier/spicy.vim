@@ -24,7 +24,7 @@ syntax keyword spicyKeyword public self module function global local return on b
 syntax match spicyDollarDollar /\$\$/
 syntax keyword spicyNull Null
 syntax keyword spicyImport import from
-syntax keyword spicyStatement print assert cast result error
+syntax keyword spicyStatement print assert cast error
 syntax keyword spicyConditional if else switch while
 syntax keyword spicyCase case default
 syntax keyword spicyException try catch throw
@@ -39,7 +39,7 @@ syntax match spicyStructInit /$[a-zA-Z_]\+\i*/
 syntax match spicyAttribute /&\(\w\|\d\|-\)\+/
 syntax match spicyNumber "\d"
 
-syntax keyword spicyType addr bitfield bool bytes iterator interval interval_ns port int8 int16 int32 int64 uint8 uint16 uint32 uint64 real regexp sink stream view string tuple vector void optional
+syntax keyword spicyType addr bitfield bool bytes iterator interval interval_ns map optional port int8 int16 int32 int64 uint8 uint16 uint32 uint64 real regexp result set sink stream string tuple vector view void
 
 syntax match spicyRegexp ~/.*/~
 
